@@ -1,5 +1,5 @@
 # MBTA Sample Assignment
-This is a small web app that was created as part of applying to the [MBTA](mbta.com) software team. You can view it live at https://lourd.github.io/mbta-trains.
+This is a small web app that was created as part of applying to the [MBTA](http://mbta.com) software team. You can view it live at https://lourd.github.io/mbta-trains.
 
 The requirements were minimal:
 
@@ -32,6 +32,9 @@ I decided to write a simple CSV parser instead of using an open source library. 
 #### Displaying the data
 The app consists of 2 main components, [`TrainStatusBoard`](src/components/TrainStatusBoard.jsx) and [`TrainStatus`](src/components/TrainStatus.jsx). `TrainStatusBoard` is decorated with 2 Higher-order components, [`withData`](src/components/withData.jsx) and [`withTime`](src/components/withTime.js). These provide encapsulation for fetching and managing state over time.
 
-The layout of the board uses plain divs and flexbox positioning. An alternative would have been to use a table.
+The layout of the board uses `div` elements and flexbox positioning. An alternative would have been to use a table.
 
-You may also notice that much of the styling is done in Javascript, applying object literals directly to the `style` property of HTML elements. There's been a lively debate going on within the React community for some time about the tradeoffs of doing this. If I were to use CSS, or another pre-processor, I would apply a `className` property to the HTML components and write the styling in an external stylesheet that I could `import` in the Javascript module.
+You may also notice that much of the styling is done in Javascript, applying object literals directly to the `style` property of HTML elements. There's been a lively debate going on within the React community for some time about the tradeoffs of doing this. If I were to use CSS, or another CSS pre-processor, I would apply a `className` property to the HTML components and write the styling in an external stylesheet that I could `import` in the Javascript module.
+
+#### Dependencies
+I used the [Moment.js](momentjs.com) library to do some date formatting. Aside from that, React, and ReactDOM, Babel, and Webpack there are no other top-level, 3rd party dependencies.
